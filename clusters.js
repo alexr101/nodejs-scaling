@@ -6,8 +6,8 @@ const app = express();
 
 
 if (cluster.isMaster) {
-    const nCpus = os.ncpus().length;
-    console.log('Forking ${nCpus} CPUs');
+    const nCpus = os.cpus().length;
+    console.log(`Forking ${nCpus} CPUs`);
 
     for(let i = 0; i < nCpus; i++) {
         cluster.fork();
@@ -24,7 +24,7 @@ if (cluster.isMaster) {
 
     app.get('/slow', (req, res) => {
         for (var i = 0; i < 1e4; i++) {
-            console.log(i)
+            // console.log(i)
         }
         res.send(Math.random().toString());
     });

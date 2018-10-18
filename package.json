@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "cluster": "nodemon clusters.js",
+    "no-cluster": "nodemon clusters-none.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +14,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "express": "^4.16.4",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "siege": "^0.2.0"
   }
 }
